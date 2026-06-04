@@ -1,11 +1,24 @@
 
     /* ===== RESET BÁSICO — não precisa mexer ===== */
+
+    :root{
+    --verde-escuro: #2D6A4F;
+    --verde-medio: #40916C;
+    --verde-claro: #D8F3DC;
+
+    --bege: #F8F5F0;
+    --areia: #E9EDC9;
+
+    --texto: #1B4332;
+    --branco: #FFFFFF;
+  }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
-      font-family: Arial,sans-serif; 
-      line-height: 1.6; 
-      background-color: darkseagreen;
-    }
+      background-color: var(--bege);
+      color: var(--texto);
+      font-family: 'Poppins', sans-serif;
+      }
 
     /* ===== AQUI COMEÇA O QUE É SEU =====
        Estilize o cabeçalho, o conteúdo e o rodapé.
@@ -17,12 +30,21 @@
 
     header {
       /* TODO: cor de fundo, cor do texto, espaçamento interno (padding), centralizar os elementos do header */
-      background-color: seagreen;
-      color: lightgray;
+      background: linear-gradient(
+          135deg,
+          var(--verde-escuro),
+          var(--verde-medio)
+      );
+
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,.15);
       padding: 1rem;
       text-align: center;
       position: sticky;
       top: 0;
+      z-index: 1000;
     }
 
     main {
@@ -39,30 +61,41 @@
     .destaque {
       /* TODO: este é o bloco principal da sua mensagem.
          Faça ele se destacar visualmente do resto. */
-         text-align: center;
-         border: 1px solid darkgreen;
-         padding: 1rem;
-         background-color: seagreen;
-         max-width: 50%;
-         border-radius: 1rem;
-
+      background-color: white;
+      border-left: 8px solid var(--verde-medio);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 700px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      transition: .3s;
     }
-  
+    .lista-bolinha {
+    list-style-type: disc; /*bolinhas na lista*/
+    }
+
+    .destaque-titulo{
+      display: flex;
+      font-size: medium;
+      text-align: justify;
+      padding-bottom: 0.5rem;
+      color: var(--verde-escuro);
+    }
+
     /* abrir os seletores .destaque h2 e .destaque p logo abaixo de .destaque no CSS */
     .destaque h2{
-      font-size: 1.5rem;
-      color: #F5EBE0;
-      word-wrap: break-word;
+      color: var(--verde-escuro);
+      margin-bottom: 1rem;
+      font-size: 1.7rem;
     }
-
     .destaque p{
       text-align: justify;
       color: F5EBE0;
       font-size: 0.9rem;
+      margin: 0 0 10px;
     }
-
     .destaque:hover{
-      background-color: darkolivegreen;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,.12);
     }
     .destaque p:hover{
       color:F5EBE0;
@@ -72,19 +105,26 @@
       width: 200px;
       height: 200px;
       border-radius: 100%;
+      border: 6px solid var(--verde-medio);
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      transition: .4s;
     }
 
     img:hover{
       width: 280px;
       height: 280px;
+      transform: scale(1.05);
       cursor: pointer;
     }
 
     form{
       width: 50%;
-      border: 1px solid olive;
-      border-radius: 1rem;
-      padding: 1rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      max-width: 700px;
+      width: 100%;
     }
 
     form h2{
@@ -99,23 +139,35 @@
       margin: 0.5rem;
     }
 
-
     form button{
       width: 90%;
       margin: 0 auto;
-      padding: 0.5rem;
-      background-color: olive;
-      border-radius: 10px;
       font-size: 1rem;
       font-weight: bold;
-      color: black;
+      background-color: var(--verde-escuro);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: .8rem;
+      cursor: pointer;
+      transition: .3s;
     }
-
+    input{
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+    }
+    input:focus{
+      outline: none;
+      border-color: var(--verde-medio);
+      box-shadow: 0 0 0 4px rgba(64,145,108,.2);
+    }
     footer {
       /* TODO: pequenininho, no fim, com a sua autoria */
-      background-color: darkolivegreen;
-      color: F5EBE0;
+      background-color: var(--verde-escuro);
+      color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
     }
  
+  
